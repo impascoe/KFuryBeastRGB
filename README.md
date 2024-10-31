@@ -1,4 +1,4 @@
-# Kingston-FuryRGB-Linux
+# KFuryRGB
 
 ## DISCLAIMER: This may break your memory as this code directly changes memory addresses. Proceed at your own risk.
 
