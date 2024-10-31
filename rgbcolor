@@ -1,18 +1,18 @@
 #!/bin/bash
 
 ram1addr=0x60
-ram2addr=0x61
-ram3addr=0x62
-ram4addr=0x63
 
-red=0xff
-green=0x3a
+# If you have more sticks of RAM, just uncomment this
+# ram2addr=0x61
+# ram3addr=0x62
+# ram4addr=0x63
+
+# Default as turning RGB to off, change these to whatever you want
+red=0x00
+green=0x00
 blue=0x00
 
-# red=0x00
-# green=0x00
-# blue=0x00
-
+# If you have more than 1 stick, just cpoy and paste this for the other sticks and change the ramaddr
 i2cset -y 0 $ram1addr 0x08 0x53
 sleep 0.020
 i2cset -y 0 $ram1addr 0x09 0x00
@@ -25,42 +25,5 @@ i2cset -y 0 $ram1addr 0x33 $blue
 sleep 0.020
 i2cset -y 0 $ram1addr 0x08 0x44
 
-sleep 0.020
-i2cset -y 0 $ram2addr 0x08 0x53
-sleep 0.020
-i2cset -y 0 $ram2addr 0x09 0x00
-sleep 0.020
-i2cset -y 0 $ram2addr 0x31 $red
-sleep 0.020
-i2cset -y 0 $ram2addr 0x32 $green
-sleep 0.020
-i2cset -y 0 $ram2addr 0x33 $blue
-sleep 0.020
-i2cset -y 0 $ram2addr 0x08 0x44
 
-sleep 0.020
-i2cset -y 0 $ram3addr 0x08 0x53
-sleep 0.020
-i2cset -y 0 $ram3addr 0x09 0x00
-sleep 0.020
-i2cset -y 0 $ram3addr 0x31 $red
-sleep 0.020
-i2cset -y 0 $ram3addr 0x32 $green
-sleep 0.020
-i2cset -y 0 $ram3addr 0x33 $blue
-sleep 0.020
-i2cset -y 0 $ram3addr 0x08 0x44
-
-sleep 0.020
-i2cset -y 0 $ram4addr 0x08 0x53
-sleep 0.020
-i2cset -y 0 $ram4addr 0x09 0x00
-sleep 0.020
-i2cset -y 0 $ram4addr 0x31 $red
-sleep 0.020
-i2cset -y 0 $ram4addr 0x32 $green
-sleep 0.020
-i2cset -y 0 $ram4addr 0x33 $blue
-sleep 0.020
-i2cset -y 0 $ram4addr 0x08 0x44
 
